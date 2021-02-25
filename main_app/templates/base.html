@@ -1,24 +1,42 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- ! add static css -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Hi Tech</title>
 </head>
-<body>
-    <header>
-        <nav></nav>
-    </header>
 
-    <main>
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper green accent-2">
+                <ul>
+                    <li class="left brand-logo">&nbsp;&nbsp;Hi Tech</li>
+                </ul>
+                <ul class="right">
+                    <li>Hi Tech</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
         {% block content %}
 
         {% endblock %}
     </main>
 
-    <footer></footer>
-    
+    <footer class="page-footer green accent-2">
+        <div class="center">In the footer!</div>
+    </footer>
+
 </body>
+
 </html>
