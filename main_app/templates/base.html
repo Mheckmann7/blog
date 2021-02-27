@@ -19,15 +19,17 @@
         <nav>
             <div class="nav-wrapper green accent-2">
                 <ul>
-                    <li class="right brand-logo">&nbsp;&nbsp;Hi Tech
+                    <li>
+                        <a href="{% url 'home' %}" class="left brand-logo">Hi Tech</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li>
                         <a href="{% url 'posts_index' %}">Post Wall</a>
                     </li>
                     <li>
                         <a href="{% url 'posts_create' %}">Create New Post</a>
                     </li>
-                </ul>
-                <ul class="right">
-                
                 </ul>
             </div>
         </nav>
