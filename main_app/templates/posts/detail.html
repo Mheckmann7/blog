@@ -10,10 +10,13 @@
             <span class="card-title">{{ post.title }}</span>
             <p>Body: {{ post.body }}</p>
             <p>Date: {{ post.date }}</p>
+            <p>Created by: {{ post.user }}</p>
         </div>
     </div>
+    {% if post.user == user %}
     <a href="{% url 'posts_update' post.id %}" class="btn">Edit</a>
     <a href="{% url 'posts_delete' post.id %}" class="btn">Delete</a>
+    {% endif %}
 </div>
 
 {% endblock %}
