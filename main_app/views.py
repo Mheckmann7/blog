@@ -4,7 +4,7 @@ from .models import Post
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 
 
@@ -36,6 +36,7 @@ def posts_index(request):
 
 @login_required
 def posts_detail(request, post_id):
+    # request.user.username
     post = Post.objects.get(id=post_id)
     # post_form = PostForm()s
     # 'post_form': post_form
@@ -53,10 +54,12 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
+    # def test_func(self):
+    #     return self.request.user.user_set.filter(pk=self.get_object().pk).exists()
     model = Post
     fields = ['title', 'body']
 
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
-    success_url = '/posts/'
+    success_url = '/'
