@@ -21,11 +21,10 @@ class Post(models.Model):
 class Comment(models.Model):
     body = models.TextField(max_length=2000)
     date = models.DateField('date created')
-
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.body
 
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('posts_detail', kwargs={'post_id': self.post.id})
