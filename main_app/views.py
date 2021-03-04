@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -36,11 +37,20 @@ def posts_index(request):
 
 @login_required
 def posts_detail(request, post_id):
-    # request.user.username
     post = Post.objects.get(id=post_id)
-    # post_form = PostForm()s
-    # 'post_form': post_form
-    return render(request, 'posts/detail.html', {'post': post})
+    comment_form = CommentForm()
+    return render(request, 'posts/detail.html', {
+        'post': post, 'comment_form': comment_form
+    })
+
+
+def add_comment(request, post_id):
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.post_id = post_id
+        new_comment.save()
+    return redirect('posts_detail', post_id=post_id)
 
 
 class PostCreate(LoginRequiredMixin, CreateView):
@@ -54,12 +64,20 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
-    # def test_func(self):
-    #     return self.request.user.user_set.filter(pk=self.get_object().pk).exists()
     model = Post
     fields = ['title', 'body']
 
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
+    success_url = '/'
+
+
+class CommentUpdate(LoginRequiredMixin, UpdateView):
+    model = Comment
+    fields = ['body']
+
+
+class CommentDelete(LoginRequiredMixin, DeleteView):
+    model = Comment
     success_url = '/'
