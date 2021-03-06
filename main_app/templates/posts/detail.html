@@ -11,8 +11,7 @@
                 <p>Body: {{ post.body }}</p>
                 <p>Date: {{ post.date }}</p>
                 <p>Created by: {{ post.user }}</p>
-                <p>Favorite: {{post.favorite}}</p>
-                <a class="btn halfway-fab waves-effect waves-light red "><i class="material-icons">thumb_up</i></a>
+                <!-- <a class="btn halfway-fab waves-effect waves-light red "><i class="material-icons">thumb_up</i></a> -->
                 <!-- <a class="btn halfway-fab waves-effect waves-light red "><i class="material-icons">favorite</i></a> -->
                 <a class="btn halfway-fab waves-effect waves-light red right"><i class="material-icons">comment</i></a>
                 <a href="{% url 'favorite_post' post.id %}" 
@@ -30,11 +29,11 @@
         <br>
 
         <div>
-            <h3>Comment</h3>
+            <h5>Comment</h5>
             <div class=" col s12 m8">
                 <form action="{% url 'add_comment' post.id %}" method="POST">
                     {% csrf_token %}
-                    {{ comment_form.as_p }}
+                    {{ comment_form }}
                     <input type="submit" class="btn right" value="Add Comment">
                 </form>
             </div>
@@ -42,7 +41,7 @@
 
         {% for comment in post.comment_set.all %}
         <div class="row">
-            <div class="col s6 m6">
+            <div class="col s6 m8">
                 <div class="card blue-grey darken-1">
                     <div class="card">
                         <div class="card-content">

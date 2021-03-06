@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 from django.contrib.auth.models import User
 
@@ -21,7 +22,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     body = models.TextField(max_length=2000)
-    date = models.DateField('date created')
+    date = models.DateField(default=datetime.now, blank=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):

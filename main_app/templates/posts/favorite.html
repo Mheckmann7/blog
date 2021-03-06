@@ -7,11 +7,10 @@
 <a href="{% url 'posts_detail' post.id %}">
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ post.title }}</span>
+            <span class="card-title">{{ post.title }} ❤️</span>
             <p>Body: {{ post.body }}</p>
             <p>Date: {{ post.date }}</p>
             <p>Created by: {{ post.user }}</p>
-            <p>Favorite: {{post.is_favorite}}</p>
         </div>
     </div>
 </a>
