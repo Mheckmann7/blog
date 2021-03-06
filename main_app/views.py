@@ -47,6 +47,7 @@ def favorite_page(request):
 def posts_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     comment_form = CommentForm()
+
     return render(request, 'posts/detail.html', {
         'post': post, 'comment_form': comment_form
     })
