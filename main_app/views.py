@@ -32,7 +32,15 @@ def home(request):
 @login_required
 def posts_index(request):
     posts = Post.objects.filter(user=request.user)
+    # favorites = Post.objects.all()
     return render(request, 'posts/index.html', {'posts': posts})
+
+
+@login_required
+def favorite_page(request):
+    # if post.is_favorite == True:
+    posts = Post.objects.all()
+    return render(request, 'posts/favorite.html', {'posts': posts})
 
 
 @login_required
@@ -50,6 +58,16 @@ def add_comment(request, post_id):
         new_comment = form.save(commit=False)
         new_comment.post_id = post_id
         new_comment.save()
+    return redirect('posts_detail', post_id=post_id)
+
+
+def favorite_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    if post.is_favorite:
+        post.is_favorite = False
+    else:
+        post.is_favorite = True
+    post.save()
     return redirect('posts_detail', post_id=post_id)
 
 

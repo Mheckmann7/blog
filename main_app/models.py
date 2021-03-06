@@ -8,6 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=20000)
     date = models.DateField('date created')
+    is_favorite = models.BooleanField(default=False)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
