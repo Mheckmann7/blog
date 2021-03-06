@@ -16,4 +16,8 @@ urlpatterns = [
          views.CommentUpdate.as_view(), name='comments_update'),
     path('comments/<int:pk>/delete/',
          views.CommentDelete.as_view(), name='comments_delete'),
+    path('<int:post_id>/favorite_post/',
+         views.favorite_post, name='favorite_post'),  # Switches favorite from True to False
+    path('favorite_page/',
+         views.favorite_page, name='favorite_page')  # Shows your favorites
 ]
