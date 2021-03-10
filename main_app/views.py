@@ -33,7 +33,7 @@ def home(request):
 def posts_index(request):
     posts = Post.objects.filter(user=request.user)
     # favorites = Post.objects.all()
-    return render(request, 'posts/index.html', {'posts': posts})
+    return render(request, 'posts/post-wall.html', {'posts': posts})
 
 
 @login_required
@@ -55,6 +55,7 @@ def posts_detail(request, post_id):
 
 def add_comment(request, post_id):
     form = CommentForm(request.POST)
+    form.instance.user = request.user
     if form.is_valid():
         new_comment = form.save(commit=False)
         new_comment.post_id = post_id
@@ -74,7 +75,7 @@ def favorite_post(request, post_id):
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'body', 'date']
+    fields = ['title', 'body']
     success_url = '/posts/'
 
     def form_valid(self, form):

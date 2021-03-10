@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 
@@ -20,4 +22,4 @@ urlpatterns = [
          views.favorite_post, name='favorite_post'),  # Switches favorite from True to False
     path('favorite_page/',
          views.favorite_page, name='favorite_page')  # Shows your favorites
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
