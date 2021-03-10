@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Posts</h1>
+<h1 class="center">Post Wall</h1>
 {% for post in posts %}
 <a href="{% url 'posts_detail' post.id %}">
-    <div class="card">
-        <div class="card-content">
+    <div class="card black-text">
+        <div class="card-content z-depth-5">
             <span class="card-title">{{ post.title }}</span>
-            <p>Body: {{ post.body }}</p>
-            <p>Date: {{ post.date }}</p>
+            <p>{{ post.body }}</p>
+            <p>{{ post.date }}</p>
             <p>Created by: {{ post.user }}</p>
 
         </div>
