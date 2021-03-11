@@ -27,15 +27,15 @@ Deployed website: [Hi Tech](link)
 
 ## Project Images:
 
-[![Screen-Shot-2021-03-10-at-8-27-01-PM.png](https://i.postimg.cc/LstHGgCn/Screen-Shot-2021-03-10-at-8-27-01-PM.png)](https://postimg.cc/WD4LkzPv)
+[![Post Wall](https://i.postimg.cc/LstHGgCn/Screen-Shot-2021-03-10-at-8-27-01-PM.png)](https://postimg.cc/WD4LkzPv)
 
-[![Screen-Shot-2021-03-10-at-8-27-22-PM.png](https://i.postimg.cc/bw2YHB10/Screen-Shot-2021-03-10-at-8-27-22-PM.png)](https://postimg.cc/K1xymQq4)
+[![Post Details](https://i.postimg.cc/bw2YHB10/Screen-Shot-2021-03-10-at-8-27-22-PM.png)](https://postimg.cc/K1xymQq4)
 
-[![Screen-Shot-2021-03-10-at-8-27-35-PM.png](https://i.postimg.cc/SKFSZfGB/Screen-Shot-2021-03-10-at-8-27-35-PM.png)](https://postimg.cc/rDj2sW3j)
+[![Favorites](https://i.postimg.cc/SKFSZfGB/Screen-Shot-2021-03-10-at-8-27-35-PM.png)](https://postimg.cc/rDj2sW3j)
 
-[![Screen-Shot-2021-03-10-at-8-27-43-PM.png](https://i.postimg.cc/dtftCYZt/Screen-Shot-2021-03-10-at-8-27-43-PM.png)](https://postimg.cc/ykFHq2Tw)
+[![Your Posts](https://i.postimg.cc/dtftCYZt/Screen-Shot-2021-03-10-at-8-27-43-PM.png)](https://postimg.cc/ykFHq2Tw)
 
-[![Screen-Shot-2021-03-10-at-8-27-51-PM.png](https://i.postimg.cc/9F0QzMMn/Screen-Shot-2021-03-10-at-8-27-51-PM.png)](https://postimg.cc/8j8S0TLR)
+[![Create Post](https://i.postimg.cc/9F0QzMMn/Screen-Shot-2021-03-10-at-8-27-51-PM.png)](https://postimg.cc/8j8S0TLR)
 
 ## Future Enhancements:
 
