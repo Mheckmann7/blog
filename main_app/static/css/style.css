@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    /* font-size: 30rem; */
-    background-color: red;
+}
+
+#logo {
+    font-family: 'Black Ops One', cursive;
+    /* font-family: 'Orbitron', sans-serif; */
+
+}
+
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
+li {
+    /* text-decoration: underline; */
 }
 
 main {
@@ -14,7 +29,4 @@ main {
 footer {
     padding-top: 0;
     text-align: right;
-    background-color: red;
 }
-
-
