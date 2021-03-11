@@ -1,75 +1,74 @@
  {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+ <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- ! add static css -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Hi Tech</title>
-</head>
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- ! add static css -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<body class="grey lighten-3">
-    <header class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper deep-purple accent-2">
-                <ul>
-                    <li>
-                        <a href="{%  url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Hi Tech</a>
-                    </li>
-                </ul>
-                <ul class="right">
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a class="black-text" href="{% url 'posts_create' %}">New Post</a>
-                    </li>
-                    <li>
-                        <a class="black-text" href="{% url 'posts_index' %}">Your Wall</a>
-                    </li>
-                    <li>
-                        <a class="black-text" href="{% url 'favorite_page' %}">Favorite</a>
-                    </li>
-                    <li>
-                        <a class="black-text" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li>
-                        <a class="black-text" href="{% url 'login' %}">Login</a>
-                    </li>
-                    <li>
-                        <a class="black-text" href="{% url 'signup' %}">Sign Up</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main class="container">
-        {% block content %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <title>Hi Tech</title>
+ </head>
 
-        {% endblock %}
-    </main>
+ <body class="grey lighten-3">
+     <header class="navbar-fixed">
+         <nav>
+             <div class="nav-wrapper deep-purple accent-2">
+                 <ul>
+                     <li>
+                         <a href="{%  url 'home' %}" class="left brand-logo" id="logo">&nbsp;&nbsp;Hi Tech</a>
+                     </li>
+                 </ul>
+                 <ul class="right">
+                     {% if user.is_authenticated %}
+                     <li>
+                         <a class="black-text" href="{% url 'posts_create' %}">New Post</a>
+                     </li>
+                     <li>
+                         <a class="black-text" href="{% url 'posts_index' %}">Your Wall</a>
+                     </li>
+                     <li>
+                         <a class="black-text" href="{% url 'favorite_page' %}">Favorites</a>
+                     </li>
+                     <li>
+                         <a class="black-text" href="{% url 'logout' %}">Logout</a>
+                     </li>
+                     {% else %}
+                     <li>
+                         <a class="black-text" href="{% url 'login' %}">Login</a>
+                     </li>
+                     <li>
+                         <a class="black-text" href="{% url 'signup' %}">Sign Up</a>
+                     </li>
+                     {% endif %}
+                 </ul>
+             </div>
+         </nav>
+     </header>
+     <main class="container">
+         {% block content %}
 
-    <footer class="page-footer deep-purple accent-2">
-        <div class="container">
-        <div class="center"> 
-            <div class="center">All Rights reserved &copy; 2021 Hi Tech</div>
-            <ul>
-                <a target="_blank" href="https://github.com/Mheckmann7/blog">GitHub</a>
-            </ul>
-        </div>
-    </div>
-        
-    </footer>
+         {% endblock %}
+     </main>
 
-</body>
+     <footer class="page-footer deep-purple accent-2">
+         <div class="container">
+             <div class="center">
+                 <div class="center">All Rights reserved &copy; 2021 Hi Tech</div>
+                 <ul>
+                     <a target="_blank" href="https://github.com/Mheckmann7/blog">GitHub</a>
+                 </ul>
+             </div>
+         </div>
 
-</html>
+     </footer>
+
+ </body>
+
+ </html>

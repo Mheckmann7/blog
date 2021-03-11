@@ -32,13 +32,11 @@ def home(request):
 @login_required
 def posts_index(request):
     posts = Post.objects.filter(user=request.user)
-    # favorites = Post.objects.all()
     return render(request, 'posts/post-wall.html', {'posts': posts})
 
 
 @login_required
 def favorite_page(request):
-    # if post.is_favorite == True:
     posts = Post.objects.all()
     return render(request, 'posts/favorite.html', {'posts': posts})
 
@@ -100,4 +98,4 @@ class CommentUpdate(LoginRequiredMixin, UpdateView):
 
 class CommentDelete(LoginRequiredMixin, DeleteView):
     model = Comment
-    success_url = '/'
+    success_url = '/posts/{post_id}/'

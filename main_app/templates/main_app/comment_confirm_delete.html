@@ -4,8 +4,8 @@
 <h4>Are you sure you want to delete?</h4>
 <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="YES - Delete!" class="btn">
-    <a href="{% url 'posts_detail' comment.id %}">Cancel</a>
+    <input type="submit" value="YES - Delete!" class="btn amber accent-1 right black-text">
+    <a href="{% url 'home' %}">Cancel</a>
 </form>
 
 {% endblock %}
