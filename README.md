@@ -2,7 +2,7 @@
 
 This is a full-stack blog application giving you the ability to signup, login, post, edit, delete, comment, and favorite.
 
-Deployed website: [Hi Tech](link)
+Deployed website: [Hi Tech](https://hi-tech-blog.herokuapp.com/)
 
 ## What did we use?
 
