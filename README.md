@@ -4,6 +4,11 @@ This is a full-stack blog application giving you the ability to signup, login, p
 
 Deployed website: [Hi Tech](https://hi-tech-blog.herokuapp.com/)
 
+[Pitch Deck](https://docs.google.com/presentation/d/1rNu7EcLcyixrK2g3GHeHfT8UPhDnNSTnpAri8zItQkY/edit?usp=sharing)
+
+[Trello](https://trello.com/b/Xm5KACE2/final-project)
+
+
 ## What did we use?
 
 - Python
